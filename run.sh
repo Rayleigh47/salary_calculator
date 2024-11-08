@@ -1,0 +1,1 @@
+poetry run streamlit run python/main.py
