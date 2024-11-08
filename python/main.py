@@ -100,6 +100,8 @@ def main():
     # Debug Console box for streamlit
     st.write("## Debug Console")
     # stx.scrollableTextbox(collected_output, height=300)
-
+    # df = pd.DataFrame([collected_output.splitlines()], columns=["Print Statements"])
+    df = pd.DataFrame(collected_output.splitlines())
+    st.dataframe(df, height=300, width=800)
 if __name__ == "__main__":
     main()
