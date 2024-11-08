@@ -1,0 +1,1 @@
+Naive salary calculator for fun
