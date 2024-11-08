@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_scrollable_textbox as stx
+# import streamlit_scrollable_textbox as stx
 import pandas as pd
 import sys
 import io
@@ -99,7 +99,7 @@ def main():
 
     # Debug Console box for streamlit
     st.write("## Debug Console")
-    stx.scrollableTextbox(collected_output, height=300)
+    # stx.scrollableTextbox(collected_output, height=300)
 
 if __name__ == "__main__":
     main()
