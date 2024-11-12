@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_scrollable_textbox as stx
+# import streamlit_scrollable_textbox as stx
 import pandas as pd
 import sys
 import io
@@ -101,7 +101,10 @@ def main():
 
     # Debug Console box for streamlit
     st.write("## Debug Console")
-    stx.scrollableTextbox(collected_output, height=300)
+    with st.container():
+        st.write(collected_output)
+
+    # stx.scrollableTextbox(collected_output, height=300)
     # df = pd.DataFrame([collected_output.splitlines()], columns=["Print Statements"])
     # df = pd.DataFrame(collected_output.splitlines())
     # st.dataframe(df, height=300, width=800)
