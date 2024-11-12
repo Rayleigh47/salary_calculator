@@ -1,5 +1,5 @@
 import streamlit as st
-# import streamlit_scrollable_textbox as stx
+import streamlit_scrollable_textbox as stx
 import pandas as pd
 import sys
 import io
@@ -35,6 +35,7 @@ def main():
     INFLATION_RATE = inflation_rate_percentage / 100
 
     # Initialize savings variables
+    total_earnings = 0
     total_savings_nominal = 0
     total_savings_real = 0
     yearly_data = []
@@ -59,9 +60,10 @@ def main():
         )
         
         # Calculate earnings, savings, and tax
-        total_earnings = calculate_earnings(salary, bonus_months)
+        earnings = calculate_earnings(salary, bonus_months)
+        total_earnings += earnings
         savings = calculate_savings(salary, CPF_cap, salary_percentage_saved, bonus_percentage_saved, bonus_months)
-        total_tax, effective_tax_rate = calculate_tax(total_earnings)
+        total_tax, effective_tax_rate = calculate_tax(earnings)
         
         # Effective savings calculation
         effective_savings = savings - total_tax
@@ -99,9 +101,9 @@ def main():
 
     # Debug Console box for streamlit
     st.write("## Debug Console")
-    # stx.scrollableTextbox(collected_output, height=300)
+    stx.scrollableTextbox(collected_output, height=300)
     # df = pd.DataFrame([collected_output.splitlines()], columns=["Print Statements"])
-    df = pd.DataFrame(collected_output.splitlines())
-    st.dataframe(df, height=300, width=800)
+    # df = pd.DataFrame(collected_output.splitlines())
+    # st.dataframe(df, height=300, width=800)
 if __name__ == "__main__":
     main()
