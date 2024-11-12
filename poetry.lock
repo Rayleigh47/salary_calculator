@@ -1033,20 +1033,6 @@ watchdog = {version = ">=2.1.5,<6", markers = "platform_system != \"Darwin\""}
 snowflake = ["snowflake-connector-python (>=2.8.0)", "snowflake-snowpark-python[modin] (>=1.17.0)"]
 
 [[package]]
-name = "streamlit-scrollable-textbox"
-version = "0.0.3"
-description = "Scrollable textbox for Streamlit."
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "streamlit_scrollable_textbox-0.0.3-py3-none-any.whl", hash = "sha256:e48d57f5477491b58afde2cd6a81d6c98bdb8063570fc2467958ae286d883b5c"},
-    {file = "streamlit_scrollable_textbox-0.0.3.tar.gz", hash = "sha256:f32c22fb28a16caa4f952f4ce6bc8ab8dc79c5adf36b188ac8938bc458905fbc"},
-]
-
-[package.dependencies]
-streamlit = ">=0.63"
-
-[[package]]
 name = "tenacity"
 version = "9.0.0"
 description = "Retry code until it succeeds"
@@ -1176,4 +1162,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "5fb955a9137ba0637b40f133b2bf325107af7ec1a1a7fcdabd6a5f55adf2b68b"
+content-hash = "4f17303a166910a4dc7f647de8aa8c6ea67cd423d205ef6899a60287f34edce8"

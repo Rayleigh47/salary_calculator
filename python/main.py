@@ -1,5 +1,4 @@
 import streamlit as st
-# import streamlit_scrollable_textbox as stx
 import pandas as pd
 import sys
 import io
@@ -99,14 +98,8 @@ def main():
     # Get the printed output from the buffer
     collected_output = output_buffer.getvalue()
 
-    # Debug Console box for streamlit
-    st.write("## Debug Console")
-    with st.container():
-        st.write(collected_output)
+    # Display the debug output in a text area
+    st.text_area("Debug Output", collected_output, height=300)
 
-    # stx.scrollableTextbox(collected_output, height=300)
-    # df = pd.DataFrame([collected_output.splitlines()], columns=["Print Statements"])
-    # df = pd.DataFrame(collected_output.splitlines())
-    # st.dataframe(df, height=300, width=800)
 if __name__ == "__main__":
     main()
